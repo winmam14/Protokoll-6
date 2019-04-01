@@ -28,7 +28,7 @@ Das Kommunikationsprotokoll ist ein einfaches zustandsloses Protokoll basierend 
    
    Wir haben für unsere Anwendung Modbus-ASCII verwendet, da es einfacher zu verstehen und zu verwenden ist.
 
-### Modbus ASCII
+### 1.1 Modbus ASCII
 Im ASCII Transmission Mode werden die Frame-Bytes als ASCII-Text versendet. Für die Konfiguration der seriellen Schnittstelle werden standardmäßig nur 7 Daten-Bits verwendet! Geräte dürfen im Bedarfsfall aber auch eine davon abweichende Festlegung haben.   
 
 Jeder Modbus **Serial Line ASCII Frame** hat folgenden Aufbau:  
@@ -44,10 +44,7 @@ Jeder Modbus **Serial Line ASCII Frame** hat folgenden Aufbau:
 Die PDU für dieses Beispiel sieht wie folgt aus:  
  ``` 
  0400000001
- ```    
-
-
-### 1.1 Modbus-ASCII
+ ```     
 
 ## 2. Temperatursensor am uC
 
