@@ -65,6 +65,11 @@ Sukzessive Approximation, bedeutet so viel wie schrittweise Annäherung. So hei�
  Das Messsignal Uin wird in n Schritten digitalisiert, wobei die Genauigkeit bei jedem Schritt um 1 Bit steigt. Bei jedem Schritt wird die Eingangsspannung mit einer Referenzspannung Uref verglichen, die durch einen DA-Wandler erzeugt wird. Je nachdem, ob Uin größer oder kleiner als die Spannung des DA-Wandlers ist, wird die Referenzspannung im nächsten Schritt um die halbe Schrittweite des letzten Schritts nach oben oder nach unten verändert. Dadurch nähert sich die Spannung des DA-Wandlers immer mehr der Eingangsspannung an. Zum Schluss, wenn das letzte Bit des DA-Wandlers gesetzt ist, entspricht der Wert des DACs der Eingangsspannung.  
  ![alt text](https://github.com/winmam14/Protokoll-6/blob/master/adcsukap.png?raw=true)       
 Quelle:[Hier](http://www.vias.org/mikroelektronik/adc_succapprox.html) klicken um zu Quelle zu gelangen!   
-## 4. Programm
+## 4. Aufgabe
+  
+  In dieser Einheit war das Ziel einen Temperatursensor, welcher am Microcontroller verbaut ist, aus zu lesen. Hierfür gibt es mehrere Lösungsansätze. Als erstes mussten wir entscheiden wie die Verbindung zwischen Microcontroller und Teminal aufgebaut wird.  
+  Wir haben uns für eine Kabelgebundene Übertragung entschieden. Somit wussten wir, dass wir über einen UART/USB konverter, welcher am Arduino Nano bereits verbaut ist, die verbindung über USB mit dem PC herstellen müssen.  
+  Danach haben wir uns dazu entschieden Modbus-ASCII als Komunikationsprotokoll festzulegen. Anschießend konnten wir das benötigte Programm dafür schreiben.  
+  Die Temperaturwerte werden als 16Bit Werte übertragen. Weiters werden die werte in Festkommacodierung übertragen somit sind links und rechts vom Komma 8 Bit. Um nun vom Temperaturwert z.B 23,5°C zum hex Wert zu kommen muss man den wert zuerst mit 256 Multiplizieren und danach in eine Hexadezimalzahl umwandeln -> 23,5 * 256 = 6016 => 1780hex
 
 
