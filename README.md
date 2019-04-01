@@ -47,5 +47,7 @@ Die PDU für dieses Beispiel sieht wie folgt aus:
  ```     
 
 ## 2. Temperatursensor am uC
+  
+  Im Unterricht verwenden wir den Arduino Nano welcher mit einem ATmega328p ausgestattet ist. Dieser besitzt einen eingebauten Temperatursensor welcher das Modbus Protokoll unterstützt.
 
 ## 3. ADC
