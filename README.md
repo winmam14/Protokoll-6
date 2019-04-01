@@ -52,6 +52,20 @@ Die PDU für dieses Beispiel sieht wie folgt aus:
 ## 2. Temperatursensor am µC
   
   Im Unterricht verwenden wir den Arduino Nano welcher mit einem ATmega328p ausgestattet ist. Dieser besitzt einen eingebauten Temperatursensor. Diesen haben wir versucht über Modbus-ASCII auszulesen.
+    
+  Beliebte AVR-Chips, die über einen internen Temperatursensor verfügen:
+
+ATmega8 : Nein  
+ATmega8L : Nein  
+ATmega8A : Nein  
+ATmega168 : Nein  
+ATmega168A : Ja  
+ATmega168P : Ja  
+ATmega328 : Ja  
+ATmega328P : Ja  
+ATmega1280 (Arduino Mega) : Nein  
+ATmega2560 (Arduino Mega 2560) : Nein  
+ATmega32U4 (Arduino Leonardo) : Ja  
 
 ## 3. ADC
 Ein Analog-Digital-Umsetzer ist ein elektronisches Gerät, Bauelement oder Teil eines Bauelements zur Umsetzung analoger Eingangssignale in einen digitalen Datenstrom, der dann weiterverarbeitet oder gespeichert werden kann. Weitere Namen und Abkürzungen sind ADU, Analog-Digital-Wandler oder A/D-Wandler.  
