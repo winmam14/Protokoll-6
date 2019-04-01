@@ -53,5 +53,5 @@ Die PDU für dieses Beispiel sieht wie folgt aus:
 ## 3. ADC
 
 
-![alt text](https://github.com/winmam14/Protokoll-6/blob/master/ADC.PNG?raw=true) 
+![alt text](https://github.com/winmam14/Protokoll-6/blob/master/ADC.PNG?raw=true)   
 Quelle: ATmega328p Datenblatt
