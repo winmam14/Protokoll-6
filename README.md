@@ -83,7 +83,7 @@ Sukzessive Approximation, bedeutet so viel wie schrittweise Annäherung. So hei�
 Quelle:[Hier](http://www.vias.org/mikroelektronik/adc_succapprox.html) klicken um zu Quelle zu gelangen!   
 ## 4. Aufgabe
   
-  In dieser Einheit war das Ziel einen Temperatursensor, welcher am Microcontroller verbaut ist, aus zu lesen. Hierfür gibt es mehrere Lösungsansätze. Als erstes mussten wir entscheiden wie die Verbindung zwischen Microcontroller und Teminal aufgebaut wird.  
+  In dieser Einheit war das Ziel einen Temperatursensor, welcher am Microcontroller verbaut ist, aus zu lesen und auf der Konsole auszugeben. Hierfür gibt es mehrere Lösungsansätze. Als erstes mussten wir entscheiden wie die Verbindung zwischen Microcontroller und Teminal aufgebaut wird.  
   Wir haben uns für eine Kabelgebundene Übertragung entschieden. Somit wussten wir, dass wir über einen UART/USB konverter, welcher am Arduino Nano bereits verbaut ist, die verbindung über USB mit dem PC herstellen müssen. Danach haben wir uns dazu entschieden Modbus-ASCII als Komunikationsprotokoll festzulegen. Anschießend konnten wir das benötigte Programm dafür schreiben.  
   Die Temperaturwerte werden als 16Bit Werte übertragen. Weiters werden die werte in Festkommacodierung übertragen somit sind links und rechts vom Komma 8 Bit. Um nun vom Temperaturwert z.B 23,5°C zum hex Wert zu kommen muss man den wert zuerst mit 256 Multiplizieren und danach in eine Hexadezimalzahl umwandeln -> 23,5 * 256 = 6016 => 1780hex  
     
