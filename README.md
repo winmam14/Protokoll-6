@@ -14,6 +14,7 @@
 ### 3. ADC
 #### 3.1 Sukzessive Approximation
 ### 4. Programm
+#### 4.1 Das Programm
 
 
 --- 
@@ -89,4 +90,186 @@ Quelle:[Hier](http://www.vias.org/mikroelektronik/adc_succapprox.html) klicken u
     
    Nachdem wir dass Programm soweit Lauffähig hatten konnten wir es testen. Dort fiel auf dass falsche werte in der Konsole ausgegeben wurden. Dies war jedoch kein großes Problem, da der Fehler statisch war und wir ihn somit durch einfaches Kallibrieren beheben konnten.
 
+### 4.1 Das Programm
 
+  
+  ### app.c
+``` void app_init (void)
+{
+
+
+memset((void *)&app, 0, sizeof(app));
+
+
+ADMUX = (1 << REFS1) | (1<< REFS0) | ( 1<< ADLAR) | 0x08;
+
+
+ADCSRA = (1<< ADEN) | 7; // 7 bedeutet durch 128, dass sind 125 kHz
+
+
+app.modbus.frameIndex = -1;
+
+
+}
+
+
+void app_task_16ms (void) {
+
+
+app.adch = ADCH;
+
+
+ADCSRA |= (1<< ADSC); //Starte ADC
+
+
+}
+
+
+void app_handleUartByte(char c){
+
+
+struct Modbus *p = &app.modbus;
+
+
+if (p ->frameIndex < 0)
+
+
+{
+
+
+return;
+
+
+}
+
+
+if( c == ':'){
+
+
+p ->frameIndex = 0;
+
+
+p->frameError = 0;
+
+
+}
+
+
+else if ( c == '\n'){
+
+
+if (p->frameError == 0){
+
+
+app_parseModbusFrame();
+
+
+}
+
+
+}
+
+
+else if (p ->frameIndex < 16){
+
+
+p ->frameIndex [p ->frameIndex] = c;
+
+
+}
+
+
+else if (p -> errCnt == 0)
+
+
+{
+
+
+p->frameError = 1;
+
+
+if(p->errCnt < 0xffff){
+
+
+p-> errCnt++;
+
+
+}
+
+
+}
+
+
+}
+
+```
+
+### app.h
+``` struct Modbus // Struktur um alle Komponenten
+{
+
+
+char frame[16];
+
+
+int8_t frameIndex;
+
+
+uint16_t frameError;
+
+
+uint16_t errCnt;
+
+
+};
+
+
+struct App
+
+
+{
+
+
+uint8_t adch;
+
+
+struct Modbus modbus;
+
+
+};
+```
+### sys.c
+``` ISR (SYS_UART_RECEIVE_VECTOR)
+{
+
+
+static uint8_t lastChar;
+
+
+uint8_t c = SYS_UDR;
+
+
+if (c=='R' && lastChar=='@')
+
+
+{
+
+
+wdt_enable(WDTO_15MS);
+
+
+wdt_reset();
+
+
+while(1) {};
+
+
+}
+
+
+lastChar = c;
+
+
+app_handleUartByte(c);
+
+```
