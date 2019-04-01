@@ -204,6 +204,8 @@ p-> errCnt++;
 
 ```
 
+Die Referenzspannung für den Analog-Digital-Wandler kann durch die Bits **REFS1** und **REFS0** im **ADMUX**-Register ausgewählt werden, die Referenzspannung liegt dann auch am **AVCC Pin** an. Möglich sind **VCC** oder die interne Referenzspannung von **2,56V**.
+
 ### app.h
 ``` struct Modbus // Struktur um alle Komponenten
 {
