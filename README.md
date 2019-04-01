@@ -11,6 +11,7 @@
 ### 1. Modbus
 ### 2. Temperatursensor am µC
 ### 3. ADC
+### 4. Programm
 
 
 --- 
@@ -48,7 +49,7 @@ Die PDU für dieses Beispiel sieht wie folgt aus:
 
 ## 2. Temperatursensor am µC
   
-  Im Unterricht verwenden wir den Arduino Nano welcher mit einem ATmega328p ausgestattet ist. Dieser besitzt einen eingebauten Temperatursensor welcher das Modbus Protokoll unterstützt.
+  Im Unterricht verwenden wir den Arduino Nano welcher mit einem ATmega328p ausgestattet ist. Dieser besitzt einen eingebauten Temperatursensor. Diesen haben wir versucht über Modbus-ASCII auszulesen.
 
 ## 3. ADC
 Ein Analog-Digital-Umsetzer ist ein elektronisches Gerät, Bauelement oder Teil eines Bauelements zur Umsetzung analoger Eingangssignale in einen digitalen Datenstrom, der dann weiterverarbeitet oder gespeichert werden kann. Weitere Namen und Abkürzungen sind ADU, Analog-Digital-Wandler oder A/D-Wandler.  
@@ -63,4 +64,7 @@ Sukzessive Approximation, bedeutet so viel wie schrittweise Annäherung. So hei�
 
  Das Messsignal Uin wird in n Schritten digitalisiert, wobei die Genauigkeit bei jedem Schritt um 1 Bit steigt. Bei jedem Schritt wird die Eingangsspannung mit einer Referenzspannung Uref verglichen, die durch einen DA-Wandler erzeugt wird. Je nachdem, ob Uin größer oder kleiner als die Spannung des DA-Wandlers ist, wird die Referenzspannung im nächsten Schritt um die halbe Schrittweite des letzten Schritts nach oben oder nach unten verändert. Dadurch nähert sich die Spannung des DA-Wandlers immer mehr der Eingangsspannung an. Zum Schluss, wenn das letzte Bit des DA-Wandlers gesetzt ist, entspricht der Wert des DACs der Eingangsspannung.  
  ![alt text](https://github.com/winmam14/Protokoll-6/blob/master/adcsukap.png?raw=true)       
-Quelle:[Hier](http://www.vias.org/mikroelektronik/adc_succapprox.html) klicken um zu Quelle zu gelangen!  
+Quelle:[Hier](http://www.vias.org/mikroelektronik/adc_succapprox.html) klicken um zu Quelle zu gelangen!   
+## 4. Programm
+
+
