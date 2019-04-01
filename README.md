@@ -51,7 +51,16 @@ Die PDU für dieses Beispiel sieht wie folgt aus:
   Im Unterricht verwenden wir den Arduino Nano welcher mit einem ATmega328p ausgestattet ist. Dieser besitzt einen eingebauten Temperatursensor welcher das Modbus Protokoll unterstützt.
 
 ## 3. ADC
-
+Ein Analog-Digital-Umsetzer ist ein elektronisches Gerät, Bauelement oder Teil eines Bauelements zur Umsetzung analoger Eingangssignale in einen digitalen Datenstrom, der dann weiterverarbeitet oder gespeichert werden kann. Weitere Namen und Abkürzungen sind ADU, Analog-Digital-Wandler oder A/D-Wandler.  
+  
+  Analog-Digital-Umsetzer sind elementare Bestandteile fast aller Geräte der modernen Kommunikations- und Unterhaltungselektronik wie z. B. Mobiltelefonen, Digitalkameras, oder Camcordern. Zudem werden sie, wie in unserer Anwendung, zur Messwerterfassung verwendet.  
 
 ![alt text](https://github.com/winmam14/Protokoll-6/blob/master/ADC.PNG?raw=true)   
 Quelle: ATmega328p Datenblatt
+
+### 3.2 Sukzessive Approximation
+Sukzessive Approximation, bedeutet so viel wie schrittweise Annäherung. So heißt das Verfahren wie unser ADC das Analoge Signal in ein Digitales umwandelt.    
+
+ Das Messsignal Uin wird in n Schritten digitalisiert, wobei die Genauigkeit bei jedem Schritt um 1 Bit steigt. Bei jedem Schritt wird die Eingangsspannung mit einer Referenzspannung Uref verglichen, die durch einen DA-Wandler erzeugt wird. Je nachdem, ob Uin größer oder kleiner als die Spannung des DA-Wandlers ist, wird die Referenzspannung im nächsten Schritt um die halbe Schrittweite des letzten Schritts nach oben oder nach unten verändert. Dadurch nähert sich die Spannung des DA-Wandlers immer mehr der Eingangsspannung an. Zum Schluss, wenn das letzte Bit des DA-Wandlers gesetzt ist, entspricht der Wert des DACs der Eingangsspannung.  
+ ![alt text](https://github.com/winmam14/Protokoll-6/blob/master/ADC.PNG?raw=true)     
+Quelle:[Hier](http://www.vias.org/mikroelektronik/adc_succapprox.html) klicken um zu Quelle zu gelangen!  
