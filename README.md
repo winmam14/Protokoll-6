@@ -9,7 +9,7 @@
 
 ## Themenübersicht 
 ### 1. Modbus
-### 2. Temperatursensor am uC
+### 2. Temperatursensor am µC
 ### 3. ADC
 
 
@@ -46,8 +46,12 @@ Die PDU für dieses Beispiel sieht wie folgt aus:
  0400000001
  ```     
 
-## 2. Temperatursensor am uC
+## 2. Temperatursensor am µC
   
   Im Unterricht verwenden wir den Arduino Nano welcher mit einem ATmega328p ausgestattet ist. Dieser besitzt einen eingebauten Temperatursensor welcher das Modbus Protokoll unterstützt.
 
 ## 3. ADC
+
+
+![alt text](https://github.com/winmam14/Protokoll-6/blob/master/ADC.PNG?raw=true) 
+Quelle: ATmega328p Datenblatt
